@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pink {
+  background-color: #ff00f3ff;
+  opacity: 100%;
+  color: #fff;
+}
+.red {
+  background-color: #ff0a0aff;
+  opacity: 70%;
+}
+.blue {
+  background-color: #0c00f6ff;
+  opacity: 100%;
+}
+.white {
+  background-color: #ffffffff;
+  opacity: 100%;
+}
+.fontFamily {
+  font-family: "Segoe Script";
+  font-weight: normal;
+}
