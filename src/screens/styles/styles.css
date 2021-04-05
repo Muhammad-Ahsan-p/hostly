@@ -11,22 +11,18 @@
   justify-content: center;
   align-items: center;
 }
-.pink {
-  background-color: #ff00f3ff;
-  opacity: 100%;
-  color: #fff;
+.primaryColor {
+  background-color: #57f;
 }
-.red {
-  background-color: #ff0a0aff;
-  opacity: 70%;
+.secondryColor {
+  background-color: #fff;
 }
 .blue {
   background-color: #0c00f6ff;
   opacity: 100%;
 }
-.white {
-  background-color: #ffffffff;
-  opacity: 100%;
+.fontWhite {
+  color: #fff;
 }
 .fontFamily {
   font-family: "Segoe Script";
