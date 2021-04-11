@@ -11,19 +11,6 @@
   justify-content: center;
   align-items: center;
 }
-.primaryColor {
-  background-color: #57f;
-}
-.secondryColor {
-  background-color: #fff;
-}
-.blue {
-  background-color: #0c00f6ff;
-  opacity: 100%;
-}
-.fontWhite {
-  color: #fff;
-}
 .fontFamily {
   font-family: "Segoe Script";
   font-weight: normal;

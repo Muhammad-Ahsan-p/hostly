@@ -1,0 +1,28 @@
+/* All the color used in the Hostly Project should be written there*/
+/* classes for all background colors*/
+.bgBlue {
+  background-color: #35b2f7ff;
+}
+.bgBlack {
+  background-color: #000000c8;
+}
+.bgWhite {
+  background-color: #ffffffff;
+}
+.bgRed {
+  background-color: #fa1501ff;
+}
+
+/* classes for all foreground/font colors*/
+.fgBlue {
+  color: #35b2f7ff;
+}
+.fgBlack {
+  color: #000000c8;
+}
+.fgWhite {
+  color: #ffffffff;
+}
+.fgRed {
+  color: #fa1501ff;
+}

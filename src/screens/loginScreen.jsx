@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
+import LoginComponent from '../components/loginComponent.jsx';
 import './styles/styles.css';
+import '../colors.css';
 
 class LoginScreen extends Component {
     state = { 
@@ -8,10 +10,8 @@ class LoginScreen extends Component {
      }
     render() { 
         return ( 
-            <div className='center secondryColor'>
-                <div>
-                     
-                </div>
+            <div className='center bgBlue'>
+                <LoginComponent/>
             </div>
          );
     }
