@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import RegisterComponent from '../components/registerComponent';
+
+import './styles/styles.css';
+
 class RegisterScreen extends Component {
     state = {  }
     render() { 
         return (
-            <div>
-
+            <div className='center bgBlue'>
+                <RegisterComponent/>
             </div> 
          );
     }

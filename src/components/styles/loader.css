@@ -1,35 +1,35 @@
-.container{
-    height: 35px;
-    width: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+.loader {
+  height: 35px;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
-span{
-    background-color: black;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    animation: loading linear 1s infinite;
+.dots {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: loading linear 1s infinite;
 }
 
 @keyframes loading {
-    0%{
-        background-color: #fff;
-       }
-       50%{
-        background-color: #777;
-       }
-       100%{
-        background-color:#000;
-       }
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #777;
+  }
+  100% {
+    background-color: #000;
+  }
 }
-span:nth-child(1){
-    animation-delay: 0.2s;
+
+.dots:nth-child(1) {
+  animation-delay: 0.2s;
 }
-span:nth-child(2){
-    animation-delay: 0.4s;
+.dots:nth-child(2) {
+  animation-delay: 0.4s;
 }
-span:nth-child(3){
-    animation-delay: 0.6s;
+.dots:nth-child(3) {
+  animation-delay: 0.6s;
 }

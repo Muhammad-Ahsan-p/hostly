@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import Loader from '../components/loaderComponent.jsx';
 import './styles/styles.css';
 import '../colors.css';

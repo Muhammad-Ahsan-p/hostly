@@ -4,10 +4,10 @@ import './styles/loader.css';
 class Loader extends Component {
     render() { 
         return (
-            <div className='container'>
-                <span></span>
-                <span></span>
-                <span></span>
+            <div className='loader'>
+                <span className='dots'></span>
+                <span className='dots'></span>
+                <span className='dots'></span>
             </div>
           );
     }
