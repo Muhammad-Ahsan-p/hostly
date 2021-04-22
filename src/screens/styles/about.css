@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.about {
+  width: 100%;
+  padding: 10px 10px 200px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.about > h1 {
+  margin: 30px;
+}
+.aboutContainer {
+  margin-bottom: 10px;
+  padding: 60px;
+  display: grid;
+  grid-gap: 20px;
+}
+.aboutBox {
+  width: 250px;
+  height: 250px;
+  background-color: #666;
+  box-shadow: 3px 3px 5px 2px #888b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 25px;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.aboutBox:hover {
+  position: relative;
+  bottom: 2px;
+  right: 2px;
+}
+
+.aboutBox p,
+address {
+  font-size: 12px;
+}
+/*=================================Media Quries===================================*/
+
+@media only screen and (min-width: 480px) and (max-width: 599px) {
+  /*--Moble View--*/
+  .aboutContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 780px) {
+  /*--Small Tablet View--*/
+  .about {
+    height: max-content;
+  }
+  .aboutContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+@media only screen and (min-width: 780px) and (max-width: 1199px) {
+  /*--Small Tablet View--*/
+  .about {
+    height: max-content;
+  }
+  .aboutContainer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  /*--Desktop View--*/
+  .about {
+    height: max-content;
+  }
+  .aboutContainer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+.aboutBox input {
+  font-family: "Courier New", Courier, monospace;
+  padding: 5px;
+  border-radius: 3px;
+  outline: none;
+  font-size: 12px;
+}
+.aboutBox textarea {
+  font-family: "Courier New", Courier, monospace;
+  width: 170px;
+  height: 160px;
+  padding: 5px;
+  border-radius: 3px;
+  outline: none;
+  resize: none;
+  font-size: 12px;
+}
+.aboutBox button {
+  font-family: segoe script;
+  width: 170px;
+  height: 27px;
+  border-radius: 5px;
+  outline: none;
+  color: white;
+  background-color: transparent;
+  border-color: white;
+}
+.aboutBox button:hover {
+  color: red;
+  border-color: red;
+}
