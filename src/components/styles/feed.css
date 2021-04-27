@@ -38,8 +38,8 @@
   height: 200px;
   margin-top: 8px;
 }
-.mainFeedComponent > button {
-  width: 99%;
+.mainFeedComponent button {
+  width: 300px;
   height: 40px;
   border-radius: 10px;
   margin-top: 8px;

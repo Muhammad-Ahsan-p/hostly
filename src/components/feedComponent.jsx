@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import '../colors.css';
 import './styles/feed.css';
 
 class FeedComponent extends Component {
-    state = {  }
+    state = {  
+        postid:3,
+    }
     render() { 
         return ( 
             <div className='bgBlue mainFeedComponent'>
@@ -13,9 +16,14 @@ class FeedComponent extends Component {
                 </div>
                 <p className='fgWhite'>{this.props.text}</p>
                 <img src={this.props.image} className='image'/>
-                <button className='fgWhite bgRed' onClick={()=>{
-                    console.log('check details clicked');
-                }}>Check Details</button>
+                <Link to={{pathname:'/detail',
+                    state:{
+                        postid:this.state.postid,
+                    },    
+                }}>
+                <button className='fgWhite bgRed'>Check Details</button>
+                </Link>
+                
             </div>
          );
     }

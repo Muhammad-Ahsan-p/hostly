@@ -22,7 +22,7 @@ class HomeScreen extends Component {
                     </div>
                     <div className='createPost bgBlue'>
                         <h3 className='fgWhite'>Create New Post</h3>
-                        <Link to=''>
+                        <Link to='/createPost'>
                           <button className='bgRed fgWhite'>Create</button>
                         </Link>
                         

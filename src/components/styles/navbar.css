@@ -1,7 +1,7 @@
 .navContainer {
   width: 100%;
-  padding: 15px;
-  border-radius: 15px;
+  height: 80px;
+  border-radius: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,56 +21,51 @@
 }
 
 .menu {
+  border-radius: 0 0 20px 20px;
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
+  width: 400px;
+  z-index: 2;
 }
-
 .banner {
+  align-items: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0 40px 0 40px;
 }
-
 .menuButton {
   text-decoration: none;
 }
 
 @media only screen and (max-width: 780px) {
   .navContainer {
-    display: block;
+    flex-direction: column;
+    position: relative;
+  }
+  .banner{
+    width:100%;
   }
   .menu {
-    height: 0vh;
-    overflow: hidden;
-    display: block;
-    transition: all 250ms ease-in;
-  }
-  .title {
+    padding: 10px 30px 30px 30px;
+    width: 100%;
+    display: none;
     position: relative;
-    right: 30px;
-    top: 4px;
+    bottom: 10px;
   }
   .icon {
     display: block;
     width: 70px;
     height: 70px;
-    position: relative;
-    left: 40px;
   }
   .unwrap {
-    height: 320px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
   }
   .menuButton {
-    display: block;
-    margin-left: 15px;
-    padding: 20px;
+    margin-left: 20px;
+    padding: 15px;
   }
-}
-@media only screen and (max-width: 1200px) {
-  /* .icon {
-      display: none;
-    }
-    .menu {
-      display: block;
-    } */
 }

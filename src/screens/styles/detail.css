@@ -1,0 +1,19 @@
+.detailContainer{
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.detailContainer dl{
+    margin-top: 15px;
+}
+.detailContainer dt{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 10px 4px 10px;
+}
+.detailContainer dd{
+    font-size: 15px;
+    margin-left: 30px;
+}

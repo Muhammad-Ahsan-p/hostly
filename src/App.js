@@ -9,15 +9,17 @@ import DetailScreen from './screens/detailScreen';
 import ChatScreen from './screens/chatScreen';
 import AboutScreen from './screens/aboutScreen';
 import ContactScreen from './screens/contactScreen';
+import CreatePost from './screens/createPostScreen';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/splash' component={SplashScreen} />
+        <Route exact path='/' component={SplashScreen} />
         <Route path='/login' component={LoginScreen} />
         <Route path='/register' component={RegisterScreen} />
         <Route path='/home' component={HomeScreen} />
+        <Route path='/createPost' component={CreatePost} />
         <Route path='/detail' component={DetailScreen} />
         <Route path='/chat' component={ChatScreen} />
         <Route path='/about' component={AboutScreen} />

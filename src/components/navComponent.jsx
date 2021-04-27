@@ -19,11 +19,9 @@ class NavBar extends Component {
             }}
           ></div>
         </div>
-        <div
-          className={
+        <div className={
             "menu bgBlue" + (this.state.unwrappedClass ? " unwrap" : "")
-          }
-        >
+          }>
           <Link className="menuButton fgWhite" to="/home">
             Home
           </Link>
