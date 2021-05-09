@@ -8,6 +8,7 @@ class NavBar extends Component {
     unwrappedClass: false,
   };
   render() {
+    const { user } = this.props;
     return (
       <div className="bgBlue navContainer">
         <div className="banner">
@@ -19,9 +20,16 @@ class NavBar extends Component {
             }}
           ></div>
         </div>
-        <div className={
+        <div
+          className={
             "menu bgBlue" + (this.state.unwrappedClass ? " unwrap" : "")
-          }>
+          }
+        >
+          {user && (
+            <Link className="menuButton fgWhite" to="/profile">
+              {user.name}
+            </Link>
+          )}
           <Link className="menuButton fgWhite" to="/home">
             Home
           </Link>
@@ -34,9 +42,21 @@ class NavBar extends Component {
           <Link className="menuButton fgWhite" to="/contact">
             Contact Us
           </Link>
-          <Link className="menuButton fgWhite" to="/login">
-            Sign Out
-          </Link>
+          {user && (
+            <Link className="menuButton fgWhite" to="/logout">
+              Log Out
+            </Link>
+          )}
+          {!user && (
+            <React.Fragment>
+              <Link className="menuButton fgWhite" to="/login">
+                Log In
+              </Link>
+              <Link className="menuButton fgWhite" to="/register">
+                Register
+              </Link>
+            </React.Fragment>
+          )}
         </div>
       </div>
     );
