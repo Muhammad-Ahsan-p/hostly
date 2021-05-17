@@ -1,25 +1,19 @@
 import React, { Component } from "react";
 import NavBar from "../components/navComponent";
-import jwtDecode from "jwt-decode";
 import { Link } from "react-router-dom";
 import FeedComponent from "../components/feedComponent";
+import auth from "../services/authSerivce";
 
 import "../colors.css";
 import "./styles/home.css";
 
 class HomeScreen extends Component {
   state = {};
-  componentDidMount() {
-    try {
-      const jwt = localStorage.getItem("token");
-      const user = jwtDecode(jwt);
-      this.setState({ user });
-    } catch (ex) {}
-  }
   render() {
+    const user = auth.getUser();
     return (
       <div className="bgBlack homeContainer">
-        <NavBar user={this.state.user} />
+        <NavBar />
         <div className="homeSection">
           <div className="followingFeed bgBlue">
             <this.followingComponent
@@ -41,12 +35,14 @@ class HomeScreen extends Component {
               image={require("../man.png")}
             />
           </div>
-          <div className="createPost bgBlue">
-            <h3 className="fgWhite">Create New Post</h3>
-            <Link to="/createPost">
-              <button className="bgRed fgWhite">Create</button>
-            </Link>
-          </div>
+          {user && (
+            <div className="createPost bgBlue">
+              <h3 className="fgWhite">Create New Post</h3>
+              <Link to="/createPost">
+                <button className="bgRed fgWhite">Create</button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     );

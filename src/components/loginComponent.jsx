@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-import * as authService from "../services/authSerivce";
-
 import Joi from "joi-browser";
+
+import authService from "../services/authSerivce";
+
 import "../colors.css";
 import "./styles/login.css";
 
@@ -55,8 +55,7 @@ class LoginComponent extends Component {
       return alert("Please Resolve Errors in Form");
     }
     try {
-      const { data: jwt } = await authService.login(data.email, data.password);
-      localStorage.setItem("token", jwt);
+      await authService.login(data.email, data.password);
       this.props.history.push("/home");
     } catch (ex) {
       if (ex && ex.response.status === 400) {

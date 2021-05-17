@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import auth from "../services/authSerivce";
 import "../colors.css";
 import "./styles/navbar.css";
 
@@ -7,8 +8,13 @@ class NavBar extends Component {
   state = {
     unwrappedClass: false,
   };
+
+  componentDidMount() {
+    this.setState({ user: auth.getUser() });
+  }
+
   render() {
-    const { user } = this.props;
+    const { user } = this.state;
     return (
       <div className="bgBlue navContainer">
         <div className="banner">

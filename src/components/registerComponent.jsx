@@ -38,7 +38,7 @@ class RegisterComponent extends Component {
   validateInput = (data) => {
     const { confirmPassword, ...register_data } = data;
     const result = Joi.validate(register_data, this.schema);
-    console.log(result);
+
     const errors = {};
     if (!result.error) return {};
 

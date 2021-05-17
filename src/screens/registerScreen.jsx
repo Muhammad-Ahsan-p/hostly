@@ -8,7 +8,7 @@ class RegisterScreen extends Component {
   render() {
     return (
       <div className="center bgBlue">
-        <RegisterComponent history={this.props.history} />
+        <RegisterComponent {...this.props} />
       </div>
     );
   }
