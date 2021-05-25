@@ -3,7 +3,7 @@ import { apiUrl } from "../config.json";
 
 const apiEndPoint = apiUrl + "/users";
 
-export function register(user) {
+function register(user) {
   return http.post(apiEndPoint, {
     name: user.name,
     email: user.email,
@@ -12,3 +12,12 @@ export function register(user) {
     phone_number: user.phone_number,
   });
 }
+
+function getAllUsers() {
+  return http.get(apiEndPoint);
+}
+
+export default {
+  register,
+  getAllUsers,
+};

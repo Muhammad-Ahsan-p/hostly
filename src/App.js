@@ -18,6 +18,7 @@ function App(props) {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={SplashScreen} />
+        <Route path="/detail/:id" component={DetailScreen} />
         <Route path="/login" component={LoginScreen} />
         <Route path="/register" component={RegisterScreen} />
         <Route path="/home" component={HomeScreen} />
@@ -28,7 +29,7 @@ function App(props) {
             return <Redirect to="/not-found" />;
           }}
         />
-        <Route path="/detail" component={DetailScreen} />
+
         <Route
           path="/chat"
           render={(props) => {

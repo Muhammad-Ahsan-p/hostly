@@ -6,11 +6,19 @@ import auth from "../services/authSerivce";
 
 import "../colors.css";
 import "./styles/home.css";
+import hostelService from "../services/hostelService";
 
 class HomeScreen extends Component {
-  state = {};
+  state = {
+    hostels: [],
+  };
+  async componentDidMount() {
+    const { data: hostels } = await hostelService.getAllHostels();
+    this.setState({ hostels });
+  }
   render() {
     const user = auth.getUser();
+    const { hostels } = this.state;
     return (
       <div className="bgBlack homeContainer">
         <NavBar />
@@ -24,16 +32,17 @@ class HomeScreen extends Component {
             <this.followingComponent name="abs" />
           </div>
           <div className="homeFeed">
-            <FeedComponent
-              name="Abc Hostal"
-              text="4 bed room is free"
-              image={require("../man.png")}
-            />
-            <FeedComponent
-              name="Abc Hostal"
-              text="4 bed room is free"
-              image={require("../man.png")}
-            />
+            {hostels.map((hostel) => (
+              <FeedComponent
+                key={hostel._id}
+                _id={hostel._id}
+                title={hostel.title}
+                address={hostel.address}
+                available_rooms={hostel.available_rooms}
+                room_price={hostel.room_price}
+                image={hostel.images[0]}
+              />
+            ))}
           </div>
           {user && (
             <div className="createPost bgBlue">

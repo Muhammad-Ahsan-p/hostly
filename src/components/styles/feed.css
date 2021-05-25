@@ -37,6 +37,7 @@
   width: 99%;
   height: 200px;
   margin-top: 8px;
+  object-fit: cover;
 }
 .mainFeedComponent button {
   width: 300px;

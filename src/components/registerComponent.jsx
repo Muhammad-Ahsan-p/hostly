@@ -4,7 +4,7 @@ import Joi from "joi-browser";
 
 import "../colors.css";
 import "./styles/register.css";
-import * as userService from "../services/userService";
+import userService from "../services/userService";
 
 class RegisterComponent extends Component {
   state = {

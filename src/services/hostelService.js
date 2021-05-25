@@ -12,6 +12,16 @@ function createHostel(data, files) {
   return http.post(apiEndPoint, data);
 }
 
+function getAllHostels() {
+  return http.get(apiEndPoint);
+}
+
+function getHostelById(id) {
+  return http.get(`${apiEndPoint}/${id}`);
+}
+
 export default {
   createHostel,
+  getAllHostels,
+  getHostelById,
 };
