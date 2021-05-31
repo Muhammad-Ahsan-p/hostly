@@ -52,6 +52,10 @@
   font-family:var(--font-2);
   font-size: 14px;
   font-weight: 500;
+  transition: color 0.5s ease-in-out;
+}
+.menuButton:hover{
+  color: var(--color-1);
 }
 
 /*-----------Media Quries of the Nav Bar---------------*/

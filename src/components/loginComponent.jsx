@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import Joi from "joi-browser";
 
 import authService from "../services/authSerivce";
-
-import "../colors.css";
 import "./styles/login.css";
 
 class LoginComponent extends Component {
@@ -70,9 +68,10 @@ class LoginComponent extends Component {
   render() {
     const { data, errors } = this.state;
     return (
-      <div className="bgBlack container">
+      <div className="container">
         <div className="loginContainer">
-          <h1 className="fgWhite fontFamily">LOGIN HERE!</h1>
+          <h1>Login</h1>
+          <hr />
           <form className="loginForm" onSubmit={this.handleSubmit}>
             <input
               type="email"
@@ -100,13 +99,13 @@ class LoginComponent extends Component {
             <input
               type="submit"
               value="Sign In"
-              className="bgRed fgWhite loginInput fontFamily"
+              className="loginBtn"
             />
           </form>
-          <Link className="fgWhite link" to="">
+          <Link className="forget" to="">
             Forget Password
           </Link>
-          <Link className="fgRed fontFamily link" to="/register">
+          <Link className="signUp" to="/register">
             SIGN UP NOW
           </Link>
         </div>

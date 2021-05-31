@@ -1,11 +1,28 @@
+/*-------------All colors of the Login---------------*/
+:root{
+    --color-1:crimson;
+    --color-2:#35b2f7ff;
+    --color-3:white;
+    --color-4:#333d;
+    --color-5:#3336;
+    --color-6:blue;
+}
+/*--------------All Fonts of the Login---------------*/
+:root{
+    --font-1:"Segoe Script";
+    --font-2:Verdana, Geneva, Tahoma, sans-serif;
+}
+  
+/*--------------CSS of the Login Starts---------------*/
 .container{
     width: 350px;
     height: 500px;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: var(--color-4);
+    box-shadow: 0px 3px 5px 5px var(--color-5);
 }
 
 @media only screen and (max-width:500px) {
@@ -22,24 +39,80 @@
     align-items: center;
     justify-content: space-evenly;
 }
+.loginContainer h1{
+    color: var(--color-3);
+    font-family: var(--font-1);
+    font-size: 40px;
+}
+.loginContainer hr{
+    height: 10px;
+    width: 200px;
+    background: linear-gradient(90deg, var(--color-1), var(--color-2));
+    border-radius: 5px;
+    border-width: 0;
+}
 .loginForm{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 300px;
+    width: 280px;
     height: 250px;
 }
-
 .loginInput{
     width: 100%;
-    padding: 8px;
+    height: 40px;
+    padding: 0 5px;
     outline: none;
-    border-radius: 5px;
-    font-size: 20px;
+    font-size: 16px;
+    font-family: var(--font-2);
+    color: var(--color-3);
+    background-color: transparent;
+    border-width: 0 0 3px 0;
+    border-color: var(--color-3);
+    transition: all 0.5s ease-in;
 }
-
-.link {
+.loginInput:hover{
+    border-color: var(--color-1);
+}
+.loginBtn{
+    width: 100%;
+    height: 40px;
+    background-color: var(--color-6);
+    color: var(--color-3);
+    border-width: 0;
+    font-size: 16px;
+    font-family: var(--font-2);
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+.loginBtn:hover{
+    background-color: var(--color-1);
+}
+.forget {
     cursor: pointer;
     text-decoration: none;
     font-size: 14px;
+    font-family: var(--font-2);
+    font-weight: 500;
+    color: var(--color-3);
+    transition: all 0.5s ease-in-out;
 }
+.forget:hover{
+    color: var(--color-1);
+}
+.signUp {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: var(--font-2);
+    color: var(--color-1);
+    transition: all 0.5s ease-in-out;
+}
+.signUp:hover{
+    color: var(--color-6);
+}
+
+.validationError {
+    color:var(--color-1);
+  }
+  

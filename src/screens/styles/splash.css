@@ -1,0 +1,48 @@
+/*-------------All Colors of the Splash Screen---------------*/
+:root{
+    --color-1:crimson;
+    --color-2:#35b2f7ff;
+    --color-3:white;
+    
+}
+/*--------------All Fonts of the Splash Screen---------------*/
+:root{
+    --font-1:"Segoe Script";
+}
+  
+/*---------CSS of the Splash Screen Starts Here--------------*/
+*{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+.splash{
+    background: linear-gradient(45deg, var(--color-1), var(--color-2));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.splashContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 130;
+}
+
+.splashContent h1{
+    color: var(--color-3);
+    font-family: var(--font-1);
+    font-size: 40px;
+    font-weight: 600;
+}
+.splashContent h2{
+    color: var(--color-3);
+    font-weight: 500;
+    font-family: var(--font-1);
+}

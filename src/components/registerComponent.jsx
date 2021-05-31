@@ -81,9 +81,10 @@ class RegisterComponent extends Component {
   render() {
     const { data, errors } = this.state;
     return (
-      <div className="registerContainer bgBlack">
+      <div className="registerContainer">
         <div className="register">
-          <h1 className="fgWhite fontFamily">REGISTER!</h1>
+          <h1>Register</h1>
+          <hr />
           <form className="registerForm" onSubmit={this.handleSubmit}>
             <input
               type="text"
@@ -91,7 +92,7 @@ class RegisterComponent extends Component {
               value={data.name}
               name="name"
               onChange={this.handleChange}
-              placeholder="Enter Your Name Here!"
+              placeholder="Full Name!"
             />
             <span className="validationError">{data.name && errors.name}</span>
             <input
@@ -100,7 +101,7 @@ class RegisterComponent extends Component {
               value={data.email}
               name="email"
               onChange={this.handleChange}
-              placeholder="Enter Your Email Here!"
+              placeholder="Email!"
             />
             <span className="validationError">
               {data.email && errors.email}
@@ -111,7 +112,7 @@ class RegisterComponent extends Component {
               value={data.password}
               name="password"
               onChange={this.handleChange}
-              placeholder="Enter Password Here!"
+              placeholder="Password!"
             />
             <span className="validationError">
               {data.password && errors.password}
@@ -146,11 +147,11 @@ class RegisterComponent extends Component {
               type="submit"
               value="SIGN UP"
               name="submit"
-              className="registerInput fontFamily bgRed fgWhite"
+              className="registerBtn"
             />
           </form>
         </div>
-        <Link className="fgRed fontFamily link" to="/login">
+        <Link className="signIn" to="/login">
           SIGN IN NOW
         </Link>
       </div>
