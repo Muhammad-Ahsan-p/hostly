@@ -1,31 +1,25 @@
 import React, { Component } from 'react';
 import NavBar from '../components/navComponent';
-import '../colors.css';
 import './styles/about.css';
+
 class Contact extends Component {
     state = {  }
     render() { 
         return ( 
-            <div className='about bgBlack'>
+            <div className='about'>
                 <NavBar/>
-                <h1 className='fgWhite fontFamily'>Contact Us</h1>
-                <div className='aboutContainer bgBlack'>
+                <h1>Contact Us</h1>
+                <hr />
+                <div className='aboutContainer'>
                     <div className='aboutBox'>
-                        <h3>Contact Us here!</h3>
-                        <p>If your facing any problem or have any suggestions about the 
-                            Hostly. Plese contact us here. 
-                        </p>
+                    <h3>Contact Us!</h3>
+                        <input type="text" placeholder="Name"/>
+                        <input type="email" placeholder="Email"/>
+                        <input type="text" placeholder="Subject"/>
                     </div>
                     <div className='aboutBox'>
-                    <h3>Fill this form!</h3>
-                        <input type="text" placeholder="Your name"/>
-                        <input type="email" placeholder="Your Email"/>
-                        <input type="text" placeholder="Your Phone Number"/>
-                        <input type="text" placeholder="Email Subject"/>
-                    </div>
-                    <div className='aboutBox'>
-                    <h3></h3>
-                        <textarea placeholder="Type Your Message here!"></textarea>
+                        <h3>Your Message!</h3>
+                        <textarea placeholder="Message!"></textarea>
                         <button>Submit</button>
                     </div>
                     <div className='aboutBox'>

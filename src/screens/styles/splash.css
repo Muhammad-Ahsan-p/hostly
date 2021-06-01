@@ -3,6 +3,7 @@
     --color-1:crimson;
     --color-2:#35b2f7ff;
     --color-3:white;
+    --color-4:blue;
     
 }
 /*--------------All Fonts of the Splash Screen---------------*/
@@ -19,7 +20,7 @@
 }
   
 .splash{
-    background: linear-gradient(45deg, var(--color-1), var(--color-2));
+    background: linear-gradient(45deg, var(--color-4), var(--color-2));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,4 +46,5 @@
     color: var(--color-3);
     font-weight: 500;
     font-family: var(--font-1);
+    font-size: 18px;
 }

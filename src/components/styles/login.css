@@ -55,8 +55,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 280px;
-    height: 250px;
+    width: 260px;
+    height: 200px;
 }
 .loginInput{
     width: 100%;

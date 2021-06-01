@@ -1,29 +1,23 @@
 import React, { Component } from 'react';
 import NavBar from '../components/navComponent';
 
-import './styles/about.css'
-import '../colors.css'
+import './styles/about.css';
 
 
 class About extends Component {
     state = {  }
     render() { 
         return ( 
-            <div className='about bgBlack'>
+            <div className='about'>
                 <NavBar/>
-                <h1 className='fgWhite fontFamily'>About Us</h1>
-                <div className='aboutContainer bgBlack'>
+                <h1>About Us</h1>
+                <hr />
+                <div className='aboutContainer'>
                     <div className='aboutBox'>
                         <h3>What is Hostly?</h3>
                         <p>Hostly is a Social Media Platform that allow the students to
                             find desired hostal for them. It also allow peoples to post
                             the add when there is a free room available for rent.
-                        </p>
-                    </div>
-                    <div className='aboutBox'>
-                    <h3>How much Costs?</h3>
-                        <p>Hostly is a free Social Media Platform that allow any one to 
-                            use it freely.
                         </p>
                     </div>
                     <div className='aboutBox'>
