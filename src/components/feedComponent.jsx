@@ -20,8 +20,8 @@ class FeedComponent extends Component {
           {this.props.available_rooms} Rooms Available at Price{" "}
           {this.props.room_price} Rs
         </p>
-        {/*<img src={`${apiImageUrl}/${this.props.image}`} className="image" />*/}
-        <img src={this.props.image} />
+        <img src={`${apiImageUrl}/${this.props.image}`} className="image" />
+
         <Link
           to={{
             pathname: `/detail/${this.props._id}`,
@@ -30,7 +30,9 @@ class FeedComponent extends Component {
             },
           }}
         >
-          <button className="button"><span>&#x2764;	</span>Check Details</button>
+          <button className="button">
+            <span>&#x2764; </span>Check Details
+          </button>
         </Link>
       </div>
     );

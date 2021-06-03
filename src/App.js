@@ -31,7 +31,7 @@ function App(props) {
         />
 
         <Route
-          path="/chat"
+          path="/chat/:id"
           render={(props) => {
             if (auth.getUser()) return <ChatScreen {...props} />;
             return <Redirect to="/login" />;

@@ -10,6 +10,7 @@ import man from "../man.png";
 import "../colors.css";
 import "./styles/chat.css";
 import userService from "../services/userService";
+import { useParams } from "react-router";
 //============================================================================================================
 
 class Chat extends Component {
@@ -19,6 +20,7 @@ class Chat extends Component {
       message_body: "",
       reciever_user: "",
     },
+    messages: [],
     errors: {},
   };
   //============================================================================================================
@@ -69,12 +71,20 @@ class Chat extends Component {
 
   async componentDidMount() {
     // const { data } = await messageService.getChats();
+
+    this.setState({
+      data: { currentChat: this.props.match.params.id },
+    });
+
     const { data } = await userService.getAllUsers();
     this.setState({ chats: data });
 
     const { data: messages } = await messageService.getMessages();
     const user = auth.getUser();
     this.setState({ messages, user });
+
+    console.log(this.props.match.params.id);
+
     messageService.socket.on(user._id, (message) => {
       this.state.messages = [...this.state.messages, message];
       data.message_body = "";
@@ -95,6 +105,7 @@ class Chat extends Component {
                 key={chat._id}
                 name={chat.email}
                 handleOpenChat={() => {
+                  this.props.history.replace("/chat/" + chat._id);
                   this.setState({
                     data: { currentChat: chat._id },
                   });

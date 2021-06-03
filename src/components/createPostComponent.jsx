@@ -18,7 +18,7 @@ class CreatePost extends Component {
       city: "",
     },
     errors: {},
-    formHide:false,
+    formHide: false,
   };
 
   schema = Joi.object({
@@ -67,9 +67,9 @@ class CreatePost extends Component {
 
     try {
       const { data: files } = await uploadService.upload(formData);
-      await hostelService.createHostel(data, files);
+      const { data: hostel } = await hostelService.createHostel(data, files);
       alert("Hostel Ad Posted...");
-      this.props.history.push("/home");
+      this.props.onPostCreated(hostel);
     } catch (ex) {
       if (ex && ex.response.status === 400) {
         const { errors } = this.state;
@@ -97,99 +97,111 @@ class CreatePost extends Component {
 
     return (
       <div className="post">
-          <button className="postBtn" onClick={()=>{this.setState({formHide:!this.state.formHide})}}>+</button>
-        <form className={"postForm "+(this.state.formHide ? "show" :"")} onSubmit={this.handleSubmit}>
-        <div className="postContent">
-          <h2>Create Post</h2>
-          <input
-            type="text"
-            name="title"
-            id="title"
-            placeholder="Title"
-            value={data.title}
-            onChange={this.handleChange}
-          />
-          <span className="validationError">{data.title && errors.title}</span>
-          <textarea
-            name="description"
-            id="description"
-            placeholder="Description Here!"
-            value={data.description}
-            onChange={this.handleChange}
-          />
-          <span className="validationError">
-            {data.description && errors.description}
-          </span>
-          <input
-            type="text"
-            name="address"
-            id="address"
-            placeholder="Address"
-            value={data.address}
-            onChange={this.handleChange}
-          />
-          <span className="validationError">
-            {data.address && errors.address}
-          </span>
+        <button
+          className="postBtn"
+          onClick={() => {
+            this.setState({ formHide: !this.state.formHide });
+          }}
+        >
+          +
+        </button>
+        <form
+          className={"postForm " + (this.state.formHide ? "show" : "")}
+          onSubmit={this.handleSubmit}
+        >
+          <div className="postContent">
+            <h2>Create Post</h2>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Title"
+              value={data.title}
+              onChange={this.handleChange}
+            />
+            <span className="validationError">
+              {data.title && errors.title}
+            </span>
+            <textarea
+              name="description"
+              id="description"
+              placeholder="Description Here!"
+              value={data.description}
+              onChange={this.handleChange}
+            />
+            <span className="validationError">
+              {data.description && errors.description}
+            </span>
+            <input
+              type="text"
+              name="address"
+              id="address"
+              placeholder="Address"
+              value={data.address}
+              onChange={this.handleChange}
+            />
+            <span className="validationError">
+              {data.address && errors.address}
+            </span>
 
-          <input
-            type="number"
-            name="room_price"
-            id="room_price"
-            placeholder="Price of Room in PKR"
-            value={data.room_price}
-            onChange={this.handleChange}
-          />
-          <span className="validationError">
-            {data.room_price && errors.room_price}
-          </span>
+            <input
+              type="number"
+              name="room_price"
+              id="room_price"
+              placeholder="Price of Room in PKR"
+              value={data.room_price}
+              onChange={this.handleChange}
+            />
+            <span className="validationError">
+              {data.room_price && errors.room_price}
+            </span>
 
-          <input
-            type="number"
-            name="available_rooms"
-            id="available_rooms"
-            placeholder="Number of Rooms"
-            value={data.available_rooms}
-            onChange={this.handleChange}
-          />
-          <span className="validationError">
-            {data.available_rooms && errors.available_rooms}
-          </span>
+            <input
+              type="number"
+              name="available_rooms"
+              id="available_rooms"
+              placeholder="Number of Rooms"
+              value={data.available_rooms}
+              onChange={this.handleChange}
+            />
+            <span className="validationError">
+              {data.available_rooms && errors.available_rooms}
+            </span>
 
-          <select
-            name="city"
-            id="city"
-            value={data.city}
-            onChange={this.handleChange}
-          >
-            <option key="_" title="Select One City" value="">
-              Select One
-            </option>
-            {cities &&
-              cities.map((city) => (
-                <option
-                  key={city._id}
-                  title={city.description}
-                  value={city._id}
-                >
-                  {city.city_name}
-                </option>
-              ))}
-          </select>
-          <span className="validationError">{errors.city}</span>
+            <select
+              name="city"
+              id="city"
+              value={data.city}
+              onChange={this.handleChange}
+            >
+              <option key="_" title="Select One City" value="">
+                Select One
+              </option>
+              {cities &&
+                cities.map((city) => (
+                  <option
+                    key={city._id}
+                    title={city.description}
+                    value={city._id}
+                  >
+                    {city.city_name}
+                  </option>
+                ))}
+            </select>
+            <span className="validationError">{errors.city}</span>
 
-          <input
-            className="fgWhite"
-            type="file"
-            name="file"
-            multiple
-            required
-            accept="image/*"
-            onChange={this.fileChangeHandler}
-          />
-          <button>Publish Ad</button>
-        </div>
-      </form>
+            <input
+              className="fgWhite"
+              type="file"
+              name="file"
+              multiple
+              required
+              accept="image/*"
+              onChange={this.fileChangeHandler}
+            />
+            <button>Publish Ad</button>
+          </div>
+        </form>
       </div>
     );
   }
