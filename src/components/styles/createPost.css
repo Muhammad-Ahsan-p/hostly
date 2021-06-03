@@ -1,0 +1,165 @@
+
+/*-------------All colors---------------*/
+:root{
+    --color-1:crimson;
+    --color-2:#35b2f7ff;
+    --color-3:white;
+    --color-4:#666;
+    --color-5:#8888;
+}
+/*--------------All Fonts---------------*/
+:root{
+    --font-1:"Segoe Script";
+    --font-2:Verdana, Geneva, Tahoma, sans-serif;
+}
+  
+/*---------CSS Starts Here--------------*/
+  
+.post{
+    width: 100%;
+    min-width: 200px;
+    height: max-content;
+    padding: 20px 20px;
+    background-color:var(--color-4);
+    display: flex;
+    margin-left: 10px;
+    box-shadow: 2px 2px 5px 8px var(--color-5);
+}
+.postBtn{
+    display: none;
+}
+.postForm{
+    width: 100%;
+    height: 500px;
+}
+.postContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.postContent h2{
+    color: var(--color-3);
+    font-family: var(--font-2);
+    font-weight: 500;
+    font-size: 22px;
+}
+.postContent input{
+    width: 100%;
+    height: 40px;
+    border: 2px solid var(--color-3);
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: var(--color-3);
+    font-family: var(--font-2);
+    font-weight: 500;
+    outline: none;
+}
+.postContent input::placeholder{
+    color: var(--color-3);
+}
+.postContent textarea{
+    width: 100%;
+    height: 100px;
+    resize: none;
+    border: 2px solid var(--color-3);
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: var(--color-3);
+    font-family: var(--font-2);
+    font-weight: 500;
+    outline: none;
+}
+.postContent textarea::placeholder{
+    color: var(--color-3);
+}
+.postContent select{
+    width: 100%;
+    height: 40px;
+    border: 2px solid var(--color-3);
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: var(--color-3);
+    font-family: var(--font-2);
+    font-weight: 500;
+    outline: none;
+}
+.postContent input[type="file"]{
+    padding: 0;
+}
+.postContent input[type="file"]::-webkit-file-upload-button{
+    height: 100%;
+    width: 50%;
+    background-color: var(--color-2);
+    border-width: 0;
+    color: var(--color-3);
+    font-family: var(--font-2);
+    font-weight: 500;
+    border-radius: 5px 0 0 5px;
+    transition: all 0.5s ease-in;
+}
+.postContent input[type="file"]::-webkit-file-upload-button:hover{
+    background-color: var(--color-1);
+}
+.postContent button{
+    width: 100%;
+    height: 40px;
+    border: 2px solid var(--color-2);
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: var(--color-2);
+    font-family: var(--font-2);
+    font-weight: 500;
+    outline: none;
+    transition: all 0.5s ease-in;
+}
+.postContent button:hover{
+    border: 2px solid var(--color-1);
+    color: var(--color-1);
+}
+@media screen and ( max-width:780px ) {
+    .post{
+        min-width: 100%;
+        height: 70px;
+        background: linear-gradient(45deg, var(--color-1), var(--color-2));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        z-index: 2000;
+    }
+    .postBtn{
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 3px solid var(--color-3);
+        color: var(--color-3);
+        font-size: 40px;
+        font-weight: 500;
+    }
+    .postForm{
+        position: fixed;
+        background-color: var(--color-4);
+        bottom: -100%;
+        z-index: 1000;
+        transition: all 0.8s ease-in;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        border-radius: 20px 20px 0 0;
+    }
+    .show{
+        bottom: 60px;
+    }
+    .postContent{
+        width: 300px;
+    }
+}

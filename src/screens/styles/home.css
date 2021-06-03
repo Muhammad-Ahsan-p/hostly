@@ -1,3 +1,20 @@
+/*--------------All Colors---------------*/
+
+:root{
+  --color-1:crimson;
+  --color-2:#35b2f7ff;
+  --color-3:white;
+  --color-4:#666;
+  --color-5:#8888;
+}
+/*--------------=All Fonts---------------*/
+:root{
+  --font-1:"Segoe Script";
+  --font-2:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*---------------All CSS-----------------*/
+
 * {
   margin: 0;
   padding: 0;
@@ -8,35 +25,85 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  background-image: url("../../images/cloth.jpg");
 }
 .homeSection {
   width: 100%;
-  height: 85%;
+  height: 88%;
   position: relative;
-  top: 10px;
-  display: grid;
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 15px;
 }
+/*==================================================*/
 .followingFeed {
-  border-radius: 10px;
+  width: 100%;
+  min-width: 200px;
+  height: 500px;
+  margin-right: 10px;
+  display: inline;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 3px;
+
 }
+.followingFeed::-webkit-scrollbar {
+  border: 2px solid var(--color-4);
+  border-radius: 1px;
+  width: 10px;
+}
+.followingFeed::-webkit-scrollbar-thumb {
+  background-color: var(--color-4);
+  border-radius: 1px;
+}
+
+.followingComponent {
+  width: 100%;
+  height: 80px;
+  margin: 2px 0;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--color-4);
+  box-shadow: 2px 2px 5px 5px var(--color-5);
+  border-radius: 5px;
+}
+.followingComponent img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.followingComponent p {
+  font-size: 14px;
+  font-family: var(--font-2);
+  font-weight: 500;
+  margin: 0 10px;
+}
+/*==================================================*/
 .homeFeed {
   overflow-y: scroll;
   overflow-x: hidden;
   white-space: nowrap;
   display: block;
   scroll-behavior: smooth;
+  padding: 1px;
+  max-width: 700px;
+  height: 100%;
 }
 .homeFeed::-webkit-scrollbar {
-  border: 2px solid #fff;
-  border-radius: 10px;
+  border: 2px solid var(--color-4);
+  border-radius: 1px;
   width: 10px;
 }
 .homeFeed::-webkit-scrollbar-thumb {
-  background-color: #fff;
-  border-radius: 10px;
+  background-color: var(--color-4);
+  border-radius: 1px;
 }
-
+/*==================================================*/
 .createPost {
   border-radius: 10px;
   margin-top: 10px;
@@ -48,16 +115,25 @@
   border-radius: 8px;
   outline: none;
 }
-
-@media only screen and (max-width: 400px) {
+/*==================================================*/
+@media screen and (max-width: 780px) {
   /*--Moble View--*/
   .homeSection {
-    grid-template-rows: auto auto auto;
-    grid-template-columns: auto;
+    flex-direction: column;
+    padding: 0;
   }
+  .homeFeed{
+    padding: 0 3px;
+    max-height: 100%;
+    min-width: 100%;
+  }
+  .homeFeed::-webkit-scrollbar{
+    display: none;
+  }
+  /*===========================================*/
   .followingFeed {
-    width: 100%;
-    height: 150px;
+    min-width: 100%;
+    height: 180px;
     white-space: nowrap;
     overflow: auto;
     scroll-behavior: smooth;
@@ -65,12 +141,30 @@
   .followingFeed::-webkit-scrollbar {
     display: none;
   }
+  .followingFeed {
+    max-width: 650px;
+  }
   .followingComponent {
+    width: 100px;
+    height: 120px;
+    margin: 0 5px;
     display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--color-4);
+    box-shadow: 2px 2px 3px 5px var(--color-5);
+    border-radius: 5px 35px 5px 5px ;
   }
-  .homeFeed {
-    width: 100%;
+  .followingComponent img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
   }
+  .followingComponent p {
+    font-size: 14px;
+  }
+  /*===========================================*/
   .createPost {
     width:100%;
     height: 50px;
@@ -81,140 +175,5 @@
     height: 30px;
   }
 }
-@media only screen and (min-width: 401px) and (max-width: 780px) {
-  /*--Small Tablet View--*/
-  .homeSection {
-    grid-template-rows: auto auto auto;
-    grid-template-columns: auto;
-  }
-  .followingFeed {
-    width: 400px;
-    height: 150px;
-    white-space: nowrap;
-    overflow: auto;
-    scroll-behavior: smooth;
-  }
-  .followingFeed::-webkit-scrollbar {
-    display: none;
-  }
-  .followingComponent {
-    display: inline-flex;
-  }
-  .homeFeed {
-    width: 400px;
-  }
-  .createPost {
-    width: 400px;
-    height: 50px;
-    flex-direction: row;
-  }
-  .createPost button{
-    width: 150px;
-    height: 30px;
-  }
-}
-@media only screen and (min-width: 781px) and (max-width: 1000px) {
-  /*--Large Tablet View--*/
-  .homeSection {
-    grid-template-rows: auto;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-  }
-  .followingFeed {
-    width: 160px;
-    height: 350px;
-    display: block;
-    overflow-y: scroll;
-  }
-  .followingFeed::-webkit-scrollbar {
-    border-radius: 10px;
-    border: 2px solid #444;
-    background-color: transparent;
-    width: 10px;
-  }
-  .followingFeed::-webkit-scrollbar-thumb {
-    background-color: red;
-    width: 5px;
-    border-radius: 5px;
-  }
-  .homeFeed{
-    width: 380px;
-  }
-
-  .createPost {
-    width: 200px;
-    height: 150px;
-    flex-direction: column;
-  }
-  .createPost button{
-    width: 150px;
-    height: 40px;
-  }
-}
-
-@media only screen and (min-width: 1001px) {
-  /*--Desktop View--*/
-  .homeSection {
-    grid-template-rows: auto;
-    grid-template-columns: auto auto auto;
-    grid-gap: 20px;
-  }
-  .followingFeed {
-    width: 160px;
-    height: 400px;
-    margin-top: 9px;
-    display: block;
-    overflow-y: scroll;
-  }
-  .followingFeed::-webkit-scrollbar {
-    border-radius: 10px;
-    border: 2px solid #444;
-    background-color: transparent;
-    width: 10px;
-  }
-  .followingFeed::-webkit-scrollbar-thumb {
-    background-color: red;
-    width: 5px;
-    border-radius: 5px;
-  }
-  .homeFeed{
-    width: 550px;
-  }
-
-  .createPost {
-    width: 200px;
-    height: 150px;
-    flex-direction: column;
-  }
-  .createPost button{
-    width: 150px;
-    height: 40px;
-  }
-}
-
 /*===================================================*/
-.followingComponent {
-  width: 140px;
-  height: 140px;
-  margin: 5px;
-  padding: 1px;
-  border-radius: 7px;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.followingComponent img {
-  width: 90%;
-  height: 80px;
-  border-radius: 5px;
-}
-.followingComponent p {
-  font-size: 14px;
-}
-.followingComponent button {
-  width: 90%;
-  height: 25px;
-  border-radius: 5px;
-  outline: none;
-}
+

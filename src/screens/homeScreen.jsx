@@ -1,13 +1,16 @@
 import React, { Component } from "react";
-import NavBar from "../components/navComponent";
 import { Link } from "react-router-dom";
-import FeedComponent from "../components/feedComponent";
-import auth from "../services/authSerivce";
 
-import "../colors.css";
-import "./styles/home.css";
+import NavBar from "../components/navComponent";
+import FeedComponent from "../components/feedComponent";
+import PostComponent from "../components/createPostComponent"; 
+
+import auth from "../services/authSerivce";
 import hostelService from "../services/hostelService";
 
+
+import img from "../images/stones.jpg";
+import "./styles/home.css";
 class HomeScreen extends Component {
   state = {
     hostels: [],
@@ -20,17 +23,37 @@ class HomeScreen extends Component {
     const user = auth.getUser();
     const { hostels } = this.state;
     return (
-      <div className="bgBlack homeContainer">
+      <div className="homeContainer">
         <NavBar />
         <div className="homeSection">
-          <div className="followingFeed bgBlue">
+          <div className="followingFeed">
             <this.followingComponent
-              image={require("../man.png")}
-              name="ahsan"
+              image={require("../images/stones.jpg")}
+              name="RSDF"
             />
-            <this.followingComponent name="abc" />
-            <this.followingComponent name="abs" />
+            <this.followingComponent
+              image={require("../images/stones.jpg")}
+              name="DCH"
+            />
+            <this.followingComponent
+              image={require("../images/stones.jpg")}
+              name="ABS"
+            />
+                        <this.followingComponent
+              image={require("../images/stones.jpg")}
+              name="RSDF"
+            />
+            <this.followingComponent
+              image={require("../images/stones.jpg")}
+              name="DCH"
+            />
+            <this.followingComponent
+              image={require("../images/stones.jpg")}
+              name="ABS"
+            />
+
           </div>
+          
           <div className="homeFeed">
             {hostels.map((hostel) => (
               <FeedComponent
@@ -43,7 +66,10 @@ class HomeScreen extends Component {
                 image={hostel.images[0]}
               />
             ))}
+            <FeedComponent title="Ahb" room_price="3800" image={img} avatar={img}/>
+            <FeedComponent title="Ahb" room_price="3800" image={img} avatar={img}/>
           </div>
+          <PostComponent/>
           {user && (
             <div className="createPost bgBlue">
               <h3 className="fgWhite">Create New Post</h3>
@@ -59,10 +85,9 @@ class HomeScreen extends Component {
 
   followingComponent(props) {
     return (
-      <div className="bgBlack followingComponent">
-        <p className="fgWhite">{props.name}</p>
+      <div className="followingComponent">
         <img src={props.image} />
-        <button className="bgRed fgWhite">Follow</button>
+        <p className="fgWhite">{props.name}</p>
       </div>
     );
   }
