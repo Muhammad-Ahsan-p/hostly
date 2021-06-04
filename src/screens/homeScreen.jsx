@@ -11,6 +11,7 @@ import userService from "../services/userService";
 
 import img from "../images/stones.jpg";
 import "./styles/home.css";
+
 class HomeScreen extends Component {
   state = {
     hostels: [],

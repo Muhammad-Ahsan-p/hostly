@@ -57,7 +57,7 @@
   text-align: left;
   margin-top: 5px;
 }
-.mainFeedComponent > img {
+.mainFeedComponent > .image {
   width: 100%;
   height: auto;
   margin-top: 8px;

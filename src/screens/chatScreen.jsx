@@ -96,10 +96,10 @@ class Chat extends Component {
     const { data, messages, user } = this.state;
 
     return (
-      <div className="bgBlack chatContainter">
+      <div className="chatContainter">
         <NavBar />
         <div className="innerChatComponent">
-          <div className="chatsFeed bgBlue">
+          <div className="chatsFeed">
             {this.state.chats.map((chat) => (
               <this.chatUser
                 key={chat._id}
@@ -137,13 +137,15 @@ class Chat extends Component {
                     />
                   );
               })}
-              <this.chatBox
+              
+            </div>
+            
+          )}
+          <this.chatBox
                 message_body={data.message_body}
                 changeHandler={this.changeHandler}
                 sendHandler={this.sendHandler}
-              />
-            </div>
-          )}
+          />
           {!this.state.data.currentChat && "Select User to start Chat!"}
         </div>
       </div>
@@ -187,9 +189,11 @@ class Chat extends Component {
   chatBox(props) {
     const styleSheet = {
       button: {
-        backgroundColor: "#33b",
-        borderColor: "#aaa",
-        borderRadius: 20,
+        backgroundColor: "crimson",
+        borderColor: "white",
+        borderRadius: 25,
+        borderWidth:3,
+        borderStyle:"solid",
         color: "#fff",
         fontSize: 25,
         height: 45,
@@ -197,26 +201,27 @@ class Chat extends Component {
       },
       container: {
         alignItems: "center",
-        bottom: 0,
         borderRadius: 6,
         backgroundColor: "transparent",
         display: "flex",
         justifyContent: "space-evenly",
-        position: "absolute",
         padding: 10,
         width: "100%",
       },
       input: {
-        borderColor: "#aaa",
-        borderRadius: 20,
+        borderColor: "#35b2f7ff",
+        borderRadius: 25,
+        borderWidth:3,
+        borderStyle:"solid",
         outline: "none",
         padding: 13,
-        width: "70%",
+        width: "100%",
+        marginRight:10,
       },
     };
 
     return (
-      <div className="bgBlack" style={styleSheet.container}>
+      <div style={styleSheet.container}>
         <input
           type="text"
           placeholder="Type a message"
@@ -242,8 +247,8 @@ class Chat extends Component {
         width: "100%",
       },
       message: {
-        backgroundColor: "#b33",
-        borderRadius: 15,
+        backgroundColor: "crimson",
+        borderRadius: 10,
         color: "#fff",
         maxWidth: "50%",
         margin: 10,
@@ -266,8 +271,8 @@ class Chat extends Component {
         width: "100%",
       },
       message: {
-        backgroundColor: "#33b",
-        borderRadius: 15,
+        backgroundColor: "#35b2f7ff",
+        borderRadius: 10,
         color: "#fff",
         maxWidth: "50%",
         margin: 10,

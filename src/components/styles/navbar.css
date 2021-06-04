@@ -70,7 +70,7 @@
     height: 100vh;
     position: fixed;
     z-index: 3000;
-    top: 80px;
+    top: 70px;
     background:linear-gradient(90deg, var(--color-1), var(--color-2));
     display: flex;
     flex-direction: column;

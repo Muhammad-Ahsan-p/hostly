@@ -23,33 +23,37 @@ class Details extends Component {
     const { hostel } = this.state;
 
     return (
-      <div className="detailContainer bgBlack fgWhite">
+      <div className="detailContainer">
         <NavBar />
-        <dl>
-          <dt>Discription</dt>
-          <dd>{hostel.description}</dd>
-          <dt>Available Rooms</dt>
-          <dd>{hostel.available_rooms}</dd>
-          <dt>Room Price</dt>
-          <dd>{hostel.room_price}</dd>
-          <dt>Images</dt>
-          <Slider images={hostel.images} />
-          <dt>Contact and User</dt>
-          <dd>
-            <ul>
-              <li>{hostel.user.name}</li>
-              <li>{hostel.user.email}</li>
-              <li>{hostel.user.phone_number}</li>
-            </ul>
-          </dd>
-        </dl>
-        <dt>Address</dt>
-        <dd>{hostel.address}</dd>
-        <dt>City</dt>
-        <dd>{`${hostel.city.city_name} | ${hostel.city.description}`}</dd>
+        <div className="detailContent">
+          <dl>
+            <dt>Discription</dt>
+            <dd>{hostel.description}</dd>
+            <dt>Available Rooms</dt>
+            <dd>{hostel.available_rooms}</dd>
+            <dt>Room Price</dt>
+            <dd>{hostel.room_price}</dd>
+            <dt>Images</dt>
+            <div className="slideContainer">
+              <Slider images={hostel.images} />
+            </div>
+            <dt>Contact and User</dt>
+            <dd>
+              <ul>
+                <li>{hostel.user.name}</li>
+                <li>{hostel.user.email}</li>
+                <li>{hostel.user.phone_number}</li>
+              </ul>
+            </dd>
+          </dl>
+          <dt>Address</dt>
+          <dd>{hostel.address}</dd>
+          <dt>City</dt>
+          <dd>{`${hostel.city.city_name} | ${hostel.city.description}`}</dd>
 
-        <dt>Member since</dt>
-        <dd>{new Date(hostel.user.date_created).toDateString()}</dd>
+          <dt>Member since</dt>
+          <dd>{new Date(hostel.user.date_created).toDateString()}</dd>
+        </div>
       </div>
     );
   }
