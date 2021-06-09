@@ -48,6 +48,7 @@
   font-weight: 500;
   font-size: 18px;
   word-spacing: 1px;
+  color: var(--color-3);
 }
 .mainFeedComponent > p {
   font-family: var(--font-2);
@@ -56,6 +57,7 @@
   font-size: 13px;
   text-align: left;
   margin-top: 5px;
+  color: var(--color-3);
 }
 .mainFeedComponent > .image {
   width: 100%;

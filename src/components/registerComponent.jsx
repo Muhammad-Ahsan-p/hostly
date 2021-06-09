@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Joi from "joi-browser";
 
-import "../colors.css";
 import "./styles/register.css";
 import userService from "../services/userService";
 

@@ -4,10 +4,7 @@ import Joi, { errors } from "joi-browser";
 import messageService from "../services/messageService";
 import auth from "../services/authSerivce";
 
-import man from "../man.png";
-
 //========================================================
-import "../colors.css";
 import "./styles/chat.css";
 import userService from "../services/userService";
 import { useParams } from "react-router";
@@ -173,12 +170,11 @@ class Chat extends Component {
     };
     return (
       <div
-        className="bgBlack"
         style={styleSheet.container}
         onClick={props.handleOpenChat}
       >
-        <img src={man} className="bgWhite" style={styleSheet.avatar} />
-        <p className="fgWhite" style={styleSheet.name}>
+        <img style={styleSheet.avatar} />
+        <p style={styleSheet.name}>
           {props.name}
         </p>
       </div>

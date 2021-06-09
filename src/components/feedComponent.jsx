@@ -3,23 +3,25 @@ import { Link } from "react-router-dom";
 
 import { apiImageUrl } from "../config.json";
 
-import "../colors.css";
 import "./styles/feed.css";
 
 class FeedComponent extends Component {
   state = {};
   render() {
     return (
-      <div className="bgBlue mainFeedComponent">
+      <div className="mainFeedComponent">
         <div className="header">
           <img src={this.props.avatar} className="avatar" />
-          <p className="fgWhite">{this.props.title}</p>
+          <p>{this.props.name}</p>
         </div>
-        <p className="fgWhite">{this.props.address}</p>
-        <p className="fgWhite">
-          {this.props.available_rooms} Rooms Available at Price{" "}
+
+        <p>
+          {this.props.title} at Price{" "}
           {this.props.room_price} Rs
         </p>
+
+        <p>{this.props.address}</p>
+        
         <img src={`${apiImageUrl}/${this.props.image}`} className="image" />
 
         <Link

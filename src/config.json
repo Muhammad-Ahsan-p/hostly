@@ -1,5 +1,5 @@
 {
-  "apiUrl": "http://localhost:3000/api",
-  "apiImageUrl": "http://localhost:3000/images",
-  "serverUrl": "http://localhost:3000"
+  "apiUrl": "https://hostly-backend.herokuapp.com/api",
+  "apiImageUrl": "https://hostly-backend.herokuapp.com/images",
+  "serverUrl": "https://hostly-backend.herokuapp.com"
 }

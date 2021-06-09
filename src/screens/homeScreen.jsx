@@ -38,22 +38,25 @@ class HomeScreen extends Component {
       <div className="homeContainer">
         <NavBar />
         <div className="homeSection">
-          <div className="followingFeed">
-            {users.map((user) => (
-              <Link to={"/chat/" + user._id} key={user._id}>
-                <this.followingComponent
-                  image={require("../images/stones.jpg")}
-                  name={user.name}
-                />
-              </Link>
-            ))}
-          </div>
-
+          {user && (
+                      <div className="followingFeed">
+                      {users.map((user) => (
+                        <Link to={"/chat/" + user._id} key={user._id}>
+                          <this.followingComponent
+                            image={require("../images/stones.jpg")}
+                            name={user.name}
+                          />
+                        </Link>
+                      ))}
+                    </div>
+          
+          )}
           <div className="homeFeed">
             {hostels.map((hostel) => (
               <FeedComponent
                 key={hostel._id}
                 _id={hostel._id}
+                name={hostel.user.name}
                 title={hostel.title}
                 address={hostel.address}
                 available_rooms={hostel.available_rooms}

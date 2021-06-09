@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import NavBar from "../components/navComponent";
 import hostelService from "../services/hostelService";
 
-import "../colors.css";
 import "./styles/detail.css";
 import Slider from "../components/sliderComponent";
 
