@@ -10,7 +10,6 @@ import DetailScreen from "./screens/detailScreen";
 import ChatScreen from "./screens/chatScreen";
 import AboutScreen from "./screens/aboutScreen";
 import ContactScreen from "./screens/contactScreen";
-import CreatePost from "./screens/createPostScreen";
 import Logout from "./components/logoutComponent";
 
 function App(props) {
@@ -22,13 +21,6 @@ function App(props) {
         <Route path="/login" component={LoginScreen} />
         <Route path="/register" component={RegisterScreen} />
         <Route path="/home" component={HomeScreen} />
-        <Route
-          path="/createPost"
-          render={(props) => {
-            if (auth.getUser()) return <CreatePost {...props} />;
-            return <Redirect to="/not-found" />;
-          }}
-        />
 
         <Route
           path="/chat/:id"
@@ -41,6 +33,7 @@ function App(props) {
         <Route path="/contact" component={ContactScreen} />
         <Route path="/logout" component={Logout} />
         <Route path="/not-found" render={() => "Page Not Found"} />
+        <Redirect to="/not-found" />
       </Switch>
     </BrowserRouter>
   );

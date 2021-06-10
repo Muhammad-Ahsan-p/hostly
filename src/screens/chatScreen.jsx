@@ -7,7 +7,6 @@ import auth from "../services/authSerivce";
 //========================================================
 import "./styles/chat.css";
 import userService from "../services/userService";
-import { useParams } from "react-router";
 //============================================================================================================
 
 class Chat extends Component {
@@ -66,6 +65,14 @@ class Chat extends Component {
     }
   };
 
+  scrollToBottom = () => {
+    this.messagesEnd && this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+  };
+
+  componentDidUpdate = () => {
+    this.scrollToBottom();
+  };
+
   async componentDidMount() {
     // const { data } = await messageService.getChats();
 
@@ -87,6 +94,8 @@ class Chat extends Component {
       data.message_body = "";
       this.setState({ messages: this.state.messages });
     });
+
+    this.scrollToBottom();
   }
 
   render() {
@@ -134,20 +143,26 @@ class Chat extends Component {
                     />
                   );
               })}
-              
+              {/* Empty div for autoscroll */}
+              <div
+                style={{ float: "left", clear: "both" }}
+                ref={(el) => {
+                  this.messagesEnd = el;
+                }}
+              ></div>
             </div>
-            
           )}
           <this.chatBox
-                message_body={data.message_body}
-                changeHandler={this.changeHandler}
-                sendHandler={this.sendHandler}
+            message_body={data.message_body}
+            changeHandler={this.changeHandler}
+            sendHandler={this.sendHandler}
           />
           {!this.state.data.currentChat && "Select User to start Chat!"}
         </div>
       </div>
     );
   }
+
   //============================================================================================================
   chatUser(props) {
     const styleSheet = {
@@ -169,14 +184,9 @@ class Chat extends Component {
       },
     };
     return (
-      <div
-        style={styleSheet.container}
-        onClick={props.handleOpenChat}
-      >
+      <div style={styleSheet.container} onClick={props.handleOpenChat}>
         <img style={styleSheet.avatar} />
-        <p style={styleSheet.name}>
-          {props.name}
-        </p>
+        <p style={styleSheet.name}>{props.name}</p>
       </div>
     );
   }
@@ -188,8 +198,8 @@ class Chat extends Component {
         backgroundColor: "crimson",
         borderColor: "white",
         borderRadius: 25,
-        borderWidth:3,
-        borderStyle:"solid",
+        borderWidth: 3,
+        borderStyle: "solid",
         color: "#fff",
         fontSize: 25,
         height: 45,
@@ -207,12 +217,12 @@ class Chat extends Component {
       input: {
         borderColor: "#35b2f7ff",
         borderRadius: 25,
-        borderWidth:3,
-        borderStyle:"solid",
+        borderWidth: 3,
+        borderStyle: "solid",
         outline: "none",
         padding: 13,
         width: "100%",
-        marginRight:10,
+        marginRight: 10,
       },
     };
 
